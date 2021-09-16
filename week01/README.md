@@ -32,9 +32,11 @@ lEt'S dO aN iCeBrEaKeR...
 This course has two halves:
 
 - First half: How does everything get translated into 1s and 0s?
+
 Short answer: representation - we agree on a common meaning of bit patterns (checkout [`./hexadecimal.md`](./hexadecimal.md)).
 
 - Second half: How do we get the OS to do stuff for us?
+
 Short answer: `man 2 whatever` to find out!
 
 ![C](C.png)

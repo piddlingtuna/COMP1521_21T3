@@ -19,17 +19,13 @@ struct pet {
 };
 
 int main(int argc, char *argv[]) {
-    
-    if(argc < 5) {
-        printf("%s needs 4 arguments to populate a pet.\n", argv[0]);
+    if (argc < 5) {
+        // TODO
+        
         return 1;
-    } else {    
-        struct pet my_pet;
-
-        strcpy(my_pet.name, argv[1]);
-        strcpy(my_pet.breed, argv[2]);
-        my_pet.age = strtol(argv[3], NULL, 10);
-        my_pet.weight = strtol(argv[4], NULL, 10);
+    } else {
+        // TODO
     }
+
     return 0;
 }
