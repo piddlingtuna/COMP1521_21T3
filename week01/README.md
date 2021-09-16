@@ -240,5 +240,9 @@ Checkout out [`./q14.c`](./q14.c)
 
 Available at: https://cgi.cse.unsw.edu.au/~cs1521/21T3/lab/01/questions
 
+Ask for help with home computing (P.S. please don't use Microsoft's SSH extension on VSCode - use SSH FS instead).
+
+Type `man 3 getchar`.
+
 ### Question
 How should breakout rooms be organised?
