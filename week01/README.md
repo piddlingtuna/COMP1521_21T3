@@ -244,6 +244,8 @@ Raise your hand if your room needs help 👋
 
 Tip: type `man 3 getchar`.
 
+Tip: For non-challenge exercises, you are encouraged to help each other out!
+
 ### Question
 How should breakout rooms be organised?
 
