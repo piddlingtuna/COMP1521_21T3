@@ -5,6 +5,7 @@
 - There are 3 tutorials at this time... you might not even be in the right one 🤔 (doesn't really matter)
 - If you need extra help, you can sneak into another tute and/or lab (you just might not be prioritised... still better than help sessions)
 - If no one says anything, this just becomes another lecture... (but I won't force you)
+- You can access this code at https://github.com/piddlingtuna/COMP1521_21T3.
 
 ### Poll
 How many lectures have you watched?

@@ -2,6 +2,7 @@
  * This program demonstrates a buffer overflow.
  * C does not check the bounds of buffers (i.e. arrays) so will continue to write memory passed the bounds.
  * This lets you overwrite the value of check.
+ * Must use `gcc` and `-fno-stack-protector` option.
  */
 
 #include <stdio.h>
