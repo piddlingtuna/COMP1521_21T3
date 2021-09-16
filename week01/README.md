@@ -1,5 +1,79 @@
 # Tutorial 1
 
+## Expectations
+
+- There are 3 tutorials at this time... you might not even be in the right one 🤔 (doesn't really matter)
+- If you need extra help, you can sneak into another tute and/or lab (you just might not be prioritised... still better than help sessions)
+- If no one says anything, this just becomes another lecture... (but I won't force you)
+
+### Poll
+How many lectures have you watched?
+
+
+## 👏👏 Meme Review 👏👏
+
+Thanks for your dank memes...
+
+If you didn't get my email...
+
+
+## Breakout Rooms
+
+lEt'S dO aN iCeBrEaKeR...
+
+2 truths, 1 lie (but we don't have time to say which is the lie).
+
+
+## Tips
+
+This course has two halves:
+
+- First half: How does everything get translated into 1s and 0s?
+Short answer: representation - we agree on a common meaning of bit patterns (checkout [`./hexadecimal.md`](./hexadecimal.md)).
+
+- Second half: How do we get the OS to do stuff for us?
+Short answer: `man 2 whatever` to find out!
+
+![C](C.png)
+
+If you have forgotten C, it is highly recommended you speed run https://learnxinyminutes.com/docs/c/.
+
+In C, you have to manage your own memory. Remember Newton's Law:
+
+![malloc](malloc.png)
+
+It's recommended to use `dcc`. You can ask in the lab if you want help to install it locally.
+
+
+## Something Cool
+
+Checkout out [`./buffer_overflow.c`](./buffer_overflow.c)
+
+What is going on?
+
+
+## Something Cruel
+
+Checkout out [`./static.c`](./static.c)
+
+
+### Poll
+Is C a well designed language?
+
+
+## Breakout Rooms
+
+Again...
+
+Access these questions at https://cgi.cse.unsw.edu.au/~cs1521/21T3/tut/01/questions (it's best if someone shares their screen).
+
+Go through questions 2 to 9.
+
+Raise your hand if your room needs help 👋
+
+Don't worry, we will come back to answer these together.
+
+
 2. Consider the following C program skeleton:
 
 ```c
@@ -34,7 +108,6 @@ int main(void) {
 }
 ```
 
-
 Now consider what happens during the execution of this program and answer the following:
 
 a. Which variables are accessible from within main()?
@@ -67,6 +140,8 @@ int main(void) {
 
 Where is each variable located in memory? Where are the strings located?
 
+![memory](memory.png)
+
 
 4. C's sizeof operator is a prefix unary operator (precedes its 1 operand) - what are examples of other C unary operators?
 
@@ -89,6 +164,8 @@ c = a;
 d.data = 42;
 c->data = 42;
 ```
+
+7. What is a pointer? How do pointers relate to other variables?
 
 
 8. Consider the following small C program:
@@ -148,37 +225,19 @@ g. *p = 1;
 If any of the statements would trigger an error, state what the error would be.
 
 
-10. Consider the following C program:
+## Recursion
 
-```c
-#include <stdio.h>
-
-int main(void) {
-    int nums[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-    // For loop version
-    for (int i = 0; i < 10; i++) {
-        printf("%d\n", nums[i]);
-    }
-
-    // While loop version
-    int i = 0;
-    while (i < 10) {
-        printf("%d\n", nums[i]);
-        i++;
-    }
-
-    return 0;
-}
-```
-
-This program uses a for loop to print each element in the array
-
-Rewrite this program using a recursive function.
+Checkout out [`./q10.c`](./q10.c)
 
 
-12. Define a struct that might store information about a pet.
+## Structs
 
-The information should include the pet's name, type of animal, age and weight.
+Checkout out [`./q14.c`](./q14.c)
 
-Create a variable of this type and assign information to it to represent an axolotl named "Fluffy" of age 7 that weighs 300 grams.
+
+## Labs
+
+Available at: https://cgi.cse.unsw.edu.au/~cs1521/21T3/lab/01/questions
+
+### Question
+How should breakout rooms be organised?

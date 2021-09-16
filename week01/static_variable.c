@@ -3,6 +3,7 @@
  * The 'count' variable behaves like a global variable except it is only visible from inside the scope of the 'magic' function.
  * The value of 'count' persists across function calls.
  */
+
 #include<stdio.h>
 
 int magic() {
