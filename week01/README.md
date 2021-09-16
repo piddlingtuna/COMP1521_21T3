@@ -23,8 +23,8 @@ If you didn't get my email...
 ## Breakout Rooms
 
 lEt'S dO aN iCeBrEaKeR...
-
-2 truths, 1 lie (but we don't have time to say which is the lie).
+- 2 truths, 1 lie (but we don't have time to say which is the lie).
+- Google Jamboard
 
 
 ## Tips
