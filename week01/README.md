@@ -59,7 +59,7 @@ What is going on?
 
 ## Something Cruel
 
-Checkout out [`./static.c`](./static.c)
+Checkout out [`./static_variable.c`](./static_variable.c)
 
 
 ### Poll
