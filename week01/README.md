@@ -66,17 +66,9 @@ Checkout out [`./static.c`](./static.c)
 Is C a well designed language?
 
 
-## Breakout Rooms
+## Questions
 
-Again...
-
-Access these questions at https://cgi.cse.unsw.edu.au/~cs1521/21T3/tut/01/questions (it's best if someone shares their screen).
-
-Go through questions 2 to 9.
-
-Raise your hand if your room needs help 👋
-
-Don't worry, we will come back to answer these together.
+Access these questions at https://cgi.cse.unsw.edu.au/~cs1521/21T3/tut/01/questions.
 
 
 2. Consider the following C program skeleton:
@@ -244,9 +236,15 @@ Checkout out [`./q14.c`](./q14.c)
 
 Available at: https://cgi.cse.unsw.edu.au/~cs1521/21T3/lab/01/questions
 
-Ask for help with home computing (P.S. please don't use Microsoft's SSH extension on VSCode - use SSH FS instead).
+**Please don't use Microsoft's Remote - SSH extension on VSCode - use the SSH FS extension instead.**
 
-Type `man 3 getchar`.
+If you ignore my advice, don't blame me if Corelli crashes during your exam.
+
+Raise your hand if your room needs help 👋
+
+Tip: type `man 3 getchar`.
 
 ### Question
 How should breakout rooms be organised?
+
+P.S. There will be a room for Home Computing.
