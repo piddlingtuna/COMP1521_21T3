@@ -135,6 +135,10 @@ int main(void) {
 }
 ```
 
+
+
+
+
 Where is each variable located in memory? Where are the strings located?
 
 ![memory](memory.png)
@@ -188,6 +192,10 @@ int main(void) {
     return 0;
 }
 ```
+
+p == 0x7fff00000000
+p = p + 1
+p == 0x7fff00000004
 
 Assume the variable n has address 0x7fff00000000.
 
@@ -250,3 +258,16 @@ Tip: For non-challenge exercises, you are encouraged to help each other out!
 How should breakout rooms be organised?
 
 P.S. There will be a room for Home Computing.
+0 1  2  3  4  5  6  7
+-----------------
+1 1  2  3  5 -1 -1 -1
+
+fib(5)
+|
+fib(4) + fib(3) - fib(2) + fib(1)
+|
+fib(3) + fib(2) - fib(1) + fib(0)
+|
+fib(2) + fib(1)
+|
+fib(1) + fib(0)

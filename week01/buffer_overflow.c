@@ -9,9 +9,11 @@
 #include <string.h>
 
 int main(void) {
-    char buffer[5];
     char check = 'a';
+    char buffer[5];
 
+    printf("%p\n", buffer);
+    printf("%p\n", &check);
     printf("Enter a string: \n");
     scanf("%s", buffer);
 

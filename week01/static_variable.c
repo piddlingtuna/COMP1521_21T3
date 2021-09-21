@@ -6,7 +6,7 @@
 
 #include<stdio.h>
 
-int magic() {
+static int magic() {
     static int count = 0;
     count++;
     return count;

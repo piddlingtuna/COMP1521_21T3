@@ -5,14 +5,18 @@
 
 #include <stdio.h>
 
+void print_array(int nums[], int index) {
+    if (index == 10) {
+        return;
+    }
+    printf("%d\n", nums[index]);
+    print_array(nums, index + 1);
+}
+
 int main(void) {
     int nums[] = {3, 1, 4, 1, 5, 9, 2, 6, 5, 3};
     
-    // Question: what is a for loop?
-    // P.S. Python's 'for' loops should be called 'for each' loops.
-    for (int i = 0; i < 10; i++) {
-        printf("%d\n", nums[i]);
-    }
+    print_array(nums, 0);
 
     return 0;
 }
