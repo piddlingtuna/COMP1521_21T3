@@ -2,6 +2,11 @@
 
 ![whale_hello_there](whale_hello_there.gif)
 
+I am not the vtutor.
+
+![vtutor](vtutor.jpg)
+
+
 ## Everything is bits
 
 **When we use bitwise operations, we treat everything as an array of bits.**
