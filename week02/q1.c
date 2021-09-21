@@ -16,9 +16,5 @@ char is either signed or unsigned.
 int is at least 4 bytes (might be longer).
 */
 
-
-// int8_t, uint8_t - or 2^8 values
-// int16_t, uint16_t - 2^16 values
-
-#define EOF -1 // on most, not all, systems
-// char - Actual type can be either signed or unsigned.
+// int8_t, uint8_t have 2^8 values
+// int16_t, uint16_t have 2^16 values

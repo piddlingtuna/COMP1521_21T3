@@ -1,6 +1,10 @@
-# Q2
+# Bases in C
 
-Show what the following decimal values look like in 8-bit binary, 3-digit octal, and 2-digit hexadecimal:
+How can you tell if an integer constant in a C program is decimal (base 10), hexadecimal (base 16), octal (base 8) or binary (base 2)?
+
+Do you think this is good language design?
+
+Language trivia: what base is the constant 0 in C?
 
 
 ## Decimal
@@ -23,7 +27,6 @@ Show what the following decimal values look like in 8-bit binary, 3-digit octal,
 
 ... + (0...7) * 4096 + (0...7) * 512 + (0...7) * 64 + (0...7) * 8 + (0...7) * 1
 
-
 ## Converting to Hexadecimal
 
 A == 10
@@ -35,20 +38,25 @@ F == 15
 
 0x1A == 1 * 16 + A (== 10) * 1 == 16 + 10 == 26
 
-... + (0...f) * 4096 + (0...f) * 256 + (0...f) * 16 + (0...f) * 1
+... + (0...F) * 4096 + (0...F) * 256 + (0...F) * 16 + (0...F) * 1
 
 
-binary == base 2, 0 or 1
-octal == base 8, 0 - 7
+## You should now understand this!
 
-a. 1 == 0b00000001 == 0o001 == 0x01
-
+![hexadecimal](hexadecimal.jpg)
 
 
-b. 8 == 0b00001000 == 0o010 == 0x08
+# Some Practice
+
+Show what the following decimal values look like in 8-bit binary, 3-digit octal, and 2-digit hexadecimal:
+
+a. 1
 
 
-c. 10 == 0b00001010 == 0o012 == 0x0A
+b. 8
+
+
+c. 10
 
 
 d. 15
@@ -63,21 +71,11 @@ d. 100
 e. 127
 
 
-f. 200 == 0b11001000 == 0o310 == 0xC8
-
-// Working below
-log2(200) ~= 7
-200 - 128 (2^7) == 72
-
-log2(72) ~= 6
-72 - 64 (2^6) == 8
-
-log2(8) == 3
-8 - 8 (2^3) == 0
+f. 200
 
 
 How could I write a C program to answer this question?
 
 ```c
-printf("%d = %3o = %2x\n", 100, 100, 100);
+printf("What do I do here?");
 ```

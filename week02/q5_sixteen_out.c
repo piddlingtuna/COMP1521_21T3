@@ -1,6 +1,3 @@
-//
-// Sample solution for COMP1521 lab exercises
-//
 // Convert a 16-bit signed integer to a string of binary digits
 
 #include <stdio.h>
@@ -15,6 +12,8 @@ char *sixteen_out(int16_t value);
 /*
 Discuss the starting code for sixteen_out, one of this week's lab exercises.
 In particular, what does this code (from the provided main) do?
+
+Hint: use `man`
 */
 
 int main(int argc, char *argv[]) {

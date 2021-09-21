@@ -1,3 +1,18 @@
+# Tutorial 1
+
+![whale_hello_there](whale_hello_there.gif)
+
+## Everything is bits
+
+**When we use bitwise operations, we treat everything as an array of bits.**
+
+An int is an array of bits of length 32.
+
+It looks like: 0b 0010 0001 0000 0001
+
+A double is an array of bits of length 64.
+
+
 ## How long should a string be?
 
 In C, strings are null terminated.
@@ -15,6 +30,11 @@ char *string = malloc((8 + 1) * sizeof char);
 string[8] = '\0';
 
 ```
+
+
+## You should now understand this!
+
+![null_terminator](null_terminator.jpg)
 
 
 ## What is a bcd?
@@ -36,12 +56,12 @@ It ranges from 0x0 to 0x9.
                      |-------| |-------|
                          4         2
 
-1 byte: 0 -> 255
+byte: 0 -> 255
 BCD: 0 -> 9
 
-258 == 0x0102 == 0b 0000 0001 0000 0002 -> 12
+258  == 0x0102 == 0b 0000 0001 0000 0010 -> 12
 
-1026 == 0x0402 == 0b 0000 0004 0000 0002 -> 42
+1026 == 0x0402 == 0b 0000 0100 0000 0010 -> 42
 
 
 ### Packed BCD
@@ -56,30 +76,6 @@ BCD: 0 -> 9
                    |--| |--|
                     4    2
 
-18 == 0x12 == 0b 0001 0002 -> 12
+18 == 0x12 == 0b 0001 0010 -> 12
 
-66 == 0x42 == 0b 0004 0002 -> 42
-
-
-
-Two's Complements
-
--8 4 2 1
-1  0 0 0 == -8
-
-1111 == -1
-
--8 + 4 + 2 + 1 == -1
-
-
-~1111 + 1 ==
-0000 + 1 == 0001
-
-111 == 7
-
-~0111 + 1
-1000 + 1 == -8 + 1 == -7
-
-
-0x1A
-0b1111
+66 == 0x42 == 0b 0100 0010 -> 42

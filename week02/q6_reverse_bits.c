@@ -26,14 +26,5 @@ reverse  = 0b 1110 0110 1010 0010 1100 0100 1000 0000
 */
 
 Word reverse_bits(Word w) {
-    Word reversed_bits = 0;
-    for (Word bit = 0; bit < 32; bit++) {
-        // 1u means 1 as an unsigned integer literal
-        Word check_mask = 1u << (31 - bit);
-        if (w & check_mask) {
-            Word reversed_mask = 1u << bit;
-            reversed_bits = reversed_bits | reversed_mask;
-        }
-    }
-    return reversed_bits;
+    return w;
 }
