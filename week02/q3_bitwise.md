@@ -1,6 +1,8 @@
 # Bitwise Operations
 
 This are MEGA fast 🏃🏃🏃!!!
+- Individually manipulate bits
+- Faster than +, -, *, /, %
 
 
 ## AND
@@ -45,6 +47,8 @@ if (both 0) {
 
 # XOR
 
+Exclusive
+
 ^ 1 0
 1 0 1
 0 1 0
@@ -62,7 +66,20 @@ Fun fact: the inverse of XOR is... XOR!!!
 
 0b0001 << 1 == 0b0010
 
-0b0010 << 2 == 0b1000
+1 << 1 == 2
+
+0b0011 << 2 == 0b1100
+
+3 << 2 == 3 * 2 * 2 == 12
+       == 3 * (2 ** 2)
+
+Below has overflow errors
+
+0b1011 << 2 == 0b1100
+
+0b1011 << 4 == 0b0000
+
+**Make sure you use unsigned types.**
 
 What mathemtical operation is this equivalent to?
 
@@ -90,25 +107,44 @@ Converting to binary:
 
 What are the values of the following expressions:
 
+0x5 | 0xA == 0xF
+
 a. a | b (bitwise OR) == 0xF
+
+0b0101
+0b1010 |
+0b1111
 
 b. a & b (bitwise AND) == 0x0
 
+0b0101
+0b1010 &
+0b0000
 
 c. a ^ b (bitwise XOR) == 0xF
 
+0b0101
+0b1010 ^
+0b1111
 
 d. a & ~b (bitwise AND, bitwise NOT) == 0x5
 
+0b0101
+0b0101 &
+0b0101
 
 e. c << 6 (left shift)
 
 
 f. a >> 4 (right shift)
-
+0x55
+0b0101 0101 >> 4 ==
+0b0000 0101 == 0x05
 
 g. a & (b << 1)
-
+0b0101 &
+0b1010
+0b0000
 
 i. b | c
 

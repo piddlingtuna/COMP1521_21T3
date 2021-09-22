@@ -30,6 +30,7 @@ int main(int argc, char *argv[]) {
         It is set to point to the first character that couldn't be understood.
         */
         long l = strtol(argv[arg], NULL, 10);
+                // atoi(argv[arg]);
         // This assert errors the program if `l` is not in the range of type int16_t.
         assert(l >= INT16_MIN && l <= INT16_MAX);
         int16_t value = l;
@@ -48,7 +49,6 @@ int main(int argc, char *argv[]) {
 // return a null-terminated string of 16 binary digits ('1' and '0')
 // storage for string is allocated using malloc
 char *sixteen_out(int16_t value) {
-
     // PUT YOUR CODE HERE
     return NULL;
 }
