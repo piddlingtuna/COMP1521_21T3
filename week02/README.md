@@ -17,6 +17,16 @@ A short looks like: 0b 0010 0001 0000 0001
 
 A double is an array of bits of length 64.
 
+```
+$ ./sixteen_in 0011001100110011
+13107
+$ ./sixteen_out 13107
+0011001100110011
+```
+
+![minecraft](minecraft.png)
+
+
 
 ## How long should a string be?
 
@@ -44,9 +54,7 @@ string[8] = '\0';
 
 ## What is a bcd?
 
-A BCD is a hexadecimal digit except we never use 0xA, 0xB, 0xC, 0xD, 0xE or 0xF.
-
-It ranges from 0x0 to 0x9.
+In a BCD, we never see 0xA, 0xB, 0xC, 0xD, 0xE or 0xF.
 
 
 ### Unpacked BCD
@@ -61,11 +69,10 @@ It ranges from 0x0 to 0x9.
                      |-------| |-------|
                          4         2
 
+Every byte ranges from 0x00 to 0x09.
+
 byte: 0 -> 255
 BCD: 0 -> 9
-
-bcd & 0xFF
-bcd & 0b1111 1111
 
 258  == 0x0102 == 0b 0000 0001 0000 0010 -> 12
 
@@ -84,16 +91,11 @@ bcd & 0b1111 1111
                    |--| |--|
                     4    2
 
+Every 4-bits ranges from 0x0 to 0x9.
+
+4-bits: 0 -> 15
+BCD: 0 -> 9
+
 18 == 0x12 == 0b 0001 0010 -> 12
 
 66 == 0x42 == 0b 0100 0010 -> 42
-0010 -> 0 -> 15 (f)
-just decide to go 0 -> 9
-2 = 0x12 & 0xF
-0b 0001 0010 &
-0b 0000 1111 ==
-int firstdigit = 0b 0000 0010
-1 = 0x12 & 0xF0
-
-0b 0001 0010 &
-0b 1111 0000 ==

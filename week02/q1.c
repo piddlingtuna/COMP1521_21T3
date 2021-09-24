@@ -13,11 +13,7 @@ uint64_t i8; //                    0 18446744073709551615
 
 /*
 char is either signed or unsigned.
-- 127 values
-- `int getchar(void);` returns an int
-- #define EOF -1 (ON MOST SYSTEMS BUT NOT ALL)
 int is at least 4 bytes (might be longer).
-- C is system dependent
 */
 
 // int8_t, uint8_t have 2^8 values
