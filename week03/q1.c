@@ -20,10 +20,7 @@ int main(void) {
     printf("%d\n", also_fine);
 
     // 30000 + 30000 == 60000
-    // unsigned
-    // 111 == 7
-    // 111 + 1 == 
-    // 000
+    // 60000 - 32768 - 32768 == -5536
     int16_t not_fine = fine + also_fine;
     printf("%d\n", not_fine);
 
