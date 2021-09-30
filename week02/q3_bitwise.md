@@ -1,6 +1,7 @@
 # Bitwise Operations
 
-This are MEGA fast 🏃🏃🏃!!!
+- You just want to manipulate individual bits
+- This are MEGA fast 🏃🏃🏃!!!
 
 ```c
 float Q_rsqrt( float number )
@@ -81,14 +82,19 @@ if (both the same) {
 
 Fun fact: the inverse of XOR is... XOR!!!
 
+a XOR b XOR b == a
 
 # Left Shift
 
 0b0001 << 1 == 0b0010
+     1 << 1 == 2
+     1 * 2
 
-0b0011 << 2
+0b0011 << 2 == 0b1100
+     3 << 2 == 12
+     3 * 2 * 2 == 12
 
-0b001 << 4
+0b0001 << 4 == 0b0000
 
 
 What mathemtical operation is this equivalent to?
@@ -98,6 +104,14 @@ What mathemtical operation is this equivalent to?
 
 ![left_shift](left_shift.png)
 
+## Right Shift
+
+uint8_t i = 0b1001 0000;
+
+0b1001 0000 >> 2 ==
+0b0010 0100
+
+USE UNSIGNED WITH BITWISE WHEN YOU CAN!!!
 
 # Exercise
 
@@ -108,6 +122,8 @@ uint16_t a = 0x5;
 uint16_t b = 0xA;
 uint16_t c = 0x1;
 ```
+small brain: value & mask
+big brain: value | mask
 
 Converting to binary:
 

@@ -13,8 +13,12 @@ uint64_t i8; //                    0 18446744073709551615
 
 /*
 char is either signed or unsigned.
+char safely hold 0 - 127, 7 bits
 int is at least 4 bytes (might be longer).
 */
+
+// getchar might return EOF
+#define EOF -1 // most systems
 
 // int8_t, uint8_t have 2^8 values
 // int16_t, uint16_t have 2^16 values

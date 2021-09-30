@@ -23,16 +23,24 @@ int main(void) {
 /*
 original = 0b 0000 0001 0010 0011 0100 0101 0110 0111
 reverse  = 0b 1110 0110 1010 0010 1100 0100 1000 0000
+
+checkmask = 0b 1000 0000 0000 0000 0000 0000 0000 0000
+  setmask = 0b 0100 0000 0000 0000 0000 0000 0000 0001
+  reverse = 0b 0000 0000 0000 0000 0000 0000 0000 0000
 */
 
-Word reverse_bits(Word w) {
-    Word answer = 0;
-    for (Word i = 0; i < 32; ++i) {
-        Word mask = 1u << i;
-        if (w & mask) {
-            Word mask2 = 1u << (31 - i);
-            answer = answer | mask2;
+#define BITS 32
+
+Word reverse_bits(Word original) {
+    Word reverse = 0;
+    for (int i = 0; i < BITS; ++i) {
+        Word checkmask = 1u << i;
+        Word setmask = 1u << (BITS - 1 - i);
+        if (original & checkmask) {
+            // i += 5;
+            // reverse = reverse | setmask;
+            reverse |= setmask;
         }
     }
-    return answer;
+    return reverse;
 }
