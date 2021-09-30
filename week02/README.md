@@ -1,4 +1,4 @@
-# Tutorial 1
+# Tutorial 2
 
 ![whale_hello_there](whale_hello_there.gif)
 
