@@ -13,6 +13,8 @@ union overlay {
     float f;
     uint32_t u;
 };
+overlay.f = 124.320;
+overlay.u >> 13;
 
 /// A struct suitable for storing the three components of a `float'.
 typedef struct float_components {
@@ -20,4 +22,7 @@ typedef struct float_components {
     uint32_t exponent;
     uint32_t fraction;
 } float_components_t;
+
+struct float_components x;
+float_components_t x;
 ```

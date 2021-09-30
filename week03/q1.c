@@ -10,6 +10,8 @@ Why the negative result? How can you make it produce the correct result?
 int main(void) {
 
     // int16_t range: -32768 to 32767
+    // 2^16 possible values
+    // -2^15 to (2^15 - 1)
 
     int16_t fine = 30000;
     printf("%d\n", fine);
@@ -17,6 +19,11 @@ int main(void) {
     int16_t also_fine = 30000;
     printf("%d\n", also_fine);
 
+    // 30000 + 30000 == 60000
+    // unsigned
+    // 111 == 7
+    // 111 + 1 == 
+    // 000
     int16_t not_fine = fine + also_fine;
     printf("%d\n", not_fine);
 
