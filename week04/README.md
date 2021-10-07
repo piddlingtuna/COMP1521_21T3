@@ -24,6 +24,7 @@ Machine code - low level
 
 ![making_intermediate_programmers_suffer](making_intermediate_programmers_suffer.png)
 
+It is a lot easier than other assembly languages, like x86.
 
 ## Useful Links
 
@@ -54,24 +55,6 @@ https://wiki.jashankj.space/Scribblings/BetterAssembly/
 
 ![c_to_mips](c_to_mips.jpg)
 
-
-## How to run MIPS?
-
-### SPIM
-
-TODO
-
-**Your code will be tested with SPIM.**
-
-### QtSpim
-
-Todo
-
-### Mipsy
-
-TODO
-
-**If you use Mipsy, make sure you test it with SPIM.**
 
 ## Big Brain Meme
 

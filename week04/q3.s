@@ -1,33 +1,23 @@
 # Print the square of a number
-
     .text
-main:
+main: # labels
 # x,y in $t0, $t1
+# x = $t0
+# y = $t1
 
-# printf("Enter a number: ");
+# printf("Enter a number: "); # write
 
 # scanf("%d", x);
-
-# if (x <= 46340) goto square;
-
-# printf("square too big for 32 bits\n");
-
-# goto end;
-    j end
-
-square:
+    
 # y = x * x
 
 # printf("%d", y);
 
 # printf("%c", '\n'); '\n' == 10
 
-end:
 # return 0; - not quite the same
     jr $ra
 
     .data
-prompt:
+prompt: # labels
     .asciiz "Enter a number: "
-too_big:
-    .asciiz "square too big for 32 bits\n"

@@ -1,28 +1,33 @@
+# Print the square of a number
 
     .text
 main:
-# x in $t0, message in $t1
+# x,y in $t0, $t1
 
 # printf("Enter a number: ");
-    
+
 # scanf("%d", x);
 
-# if (x <= 100) goto small_big;
+# if (x <= 46340) goto square;
 
-# if (x >= 1000) goto small_big;
-
-# s = "medium\n";
+# printf("square too big for 32 bits\n");
 
 # goto end;
+    j end
 
-small_big:
-# s = "small/big\n";
+square:
+# y = x * x
+
+# printf("%d", y);
+
+# printf("%c", '\n'); '\n' == 10
 
 end:
-# printf("%s", message);
-
 # return 0; - not quite the same
-
+    jr $ra
 
     .data
-
+prompt:
+    .asciiz "Enter a number: "
+too_big:
+    .asciiz "square too big for 32 bits\n"

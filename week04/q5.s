@@ -1,21 +1,28 @@
+
     .text
-# x in register $t0
-
 main:
-# x = 24
+# x in $t0, message in $t1
 
-loop:
-# if (x >= 42) goto end;
+# printf("Enter a number: ");
     
-# printf("%d", x);
+# scanf("%d", x);
 
-# printf("%c", '\n'); '\n' == 10
-    
-# x += 3
-    
-# goto loop
-    j loop
+# if (x <= 100) goto small_big;
+
+# if (x >= 1000) goto small_big;
+
+# s = "medium\n";
+
+# goto end;
+
+small_big:
+# s = "small/big\n";
 
 end:
+# printf("%s", message);
+
 # return 0; - not quite the same
-    jr $ra
+
+
+    .data
+

@@ -3,13 +3,20 @@ Translate this C program so it uses goto rather than if/else.
 
 Then translate it to MIPS assembler.
 */
-
 #include <stdio.h>
 
 int main(void) {
-    for (int x = 24; x < 42; x += 3) {
-        printf("%d\n",x);
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
+
+    if (x > 100 && x < 1000) {
+        printf("medium\n");
+    } else {
+        printf("small/big\n");
     }
+    
+    return 0;
 }
 
 /*
@@ -19,17 +26,35 @@ Consider this alternate version of the above program, use its approach to produc
 #include <stdio.h>
 
 int main2(void) {
-    int x = 24;
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
 
-    loop:
-    if (x >= 42) goto end;
+    char *message = "small/big\n";
+    if (x > 100 && x < 1000) {
+        message = "medium";
+    }
 
-        printf("%d", x);
-        printf("%c", '\n');
+    printf("%s", message);
 
-        x += 3;
+    return 0;
+}
 
-        goto loop;
+/*
+How to deal with if-else statements
+*/
+
+int main3(void) {
+    if (/* condition1 is false */ 1) goto case2;
+        /* deal with case1 */
+        goto end;
+    case2:
+    if (/* condition2 is false */ 1) goto case3;
+        /* deal with case2 */
+        goto end;
+    case3:
+    
+        goto end;
     end:
 
     return 0;

@@ -3,17 +3,21 @@ Translate this C program so it uses goto rather than if/else.
 
 Then translate it to MIPS assembler.
 */
+
+// Print the square of a number
+
 #include <stdio.h>
 
 int main(void) {
-    int x;
+    int x, y;
     printf("Enter a number: ");
     scanf("%d", &x);
 
-    if (x > 100 && x < 1000) {
-        printf("medium\n");
+    if (x > 46340) {
+        printf("square too big for 32 bits\n");
     } else {
-        printf("small/big\n");
+        y = x * x;
+        printf("%d\n", y);
     }
     
     return 0;
@@ -26,35 +30,16 @@ Consider this alternate version of the above program, use its approach to produc
 #include <stdio.h>
 
 int main2(void) {
-    int x;
+    int x, y;
     printf("Enter a number: ");
     scanf("%d", &x);
 
-    char *message = "small/big\n";
-    if (x > 100 && x < 1000) {
-        message = "medium";
-    }
-
-    printf("%s", message);
-
-    return 0;
-}
-
-/*
-How to deal with if-else statements
-*/
-
-int main3(void) {
-    if (/* condition1 is false */ 1) goto case2;
-        /* deal with case1 */
+    if (x <= 46340) goto square;
+        printf("square too big for 32 bits\n");
         goto end;
-    case2:
-    if (/* condition2 is false */ 1) goto case3;
-        /* deal with case2 */
-        goto end;
-    case3:
-    
-        goto end;
+    square:
+        y = x * x;
+        printf("%d\n", y);
     end:
 
     return 0;

@@ -4,20 +4,16 @@ Translate this C program so it uses goto rather than if/else.
 Then translate it to MIPS assembler.
 */
 
-// Simple factorial calculator  - without error checking
+// Print a triangle
 
 #include <stdio.h>
 
 int main (void) {
-    int n;
-    printf("n  = ");
-    scanf("%d", &n);
-
-    int fac = 1;
-    for (int i = 1; i <= n; i++) {
-        fac *= i;
-    }
-
-    printf ("n! = %d\n", fac);
+    for (int i = 1; i <= 10; i++) {
+        for (int j = 0; j < i; j++) {
+            printf("*");
+        }
+        printf("\n");
+    };
     return 0;
 }

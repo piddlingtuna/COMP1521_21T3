@@ -1,41 +1,28 @@
-### Compute factorials -- no functions (except main)
+
+# i in register $t1
+# j in register $t2
 
     .text
 main:
-
-# n = 0
-
-# printf("n  = ")
-
-# scanf("%d", into $v0)
-
-# fac = 1
-
-main_fac_init:
 # i = 1
 
-main_fac_cond:
-# i <= n  -->  if (i > n) break
+loop0:
+# if (i > 10) goto end0;
 
-# fac = fac * i
+# j = 0
 
-main_fac_step:
+loop1:
+# if (j >= i) goto end1;
+
+# printf("%c", '*');
+
+# j++
+
+end1:
+# printf("%c", '\n');
+
 # i++
 
-main_fac_f:
-# printf("n! = ")
-
-# assume $s2 holds n!
-
-# printf("%d", fac)
-
-# printf("\n")
-
+end0:
 # return 0; - not quite the same
     jr $ra
-
-    .data
-
-msg1:   .asciiz "n  = "
-msg2:   .asciiz "n! = "
-eol:    .asciiz "\n"

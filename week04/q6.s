@@ -1,28 +1,21 @@
-
-# i in register $t1
-# j in register $t2
-
     .text
+# x in register $t0
+
 main:
-# i = 1
+# x = 24
 
-loop0:
-# if (i > 10) goto end0;
+loop:
+# if (x >= 42) goto end;
+    
+# printf("%d", x);
 
-# j = 0
+# printf("%c", '\n'); '\n' == 10
+    
+# x += 3
+    
+# goto loop
+    j loop
 
-loop1:
-# if (j >= i) goto end1;
-
-# printf("%c", '*');
-
-# j++
-
-end1:
-# printf("%c", '\n');
-
-# i++
-
-end0:
+end:
 # return 0; - not quite the same
     jr $ra
