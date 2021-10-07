@@ -46,7 +46,7 @@ https://wiki.jashankj.space/Scribblings/BetterAssembly/
 - Have the instruction set open.
 - Have the C code open.
     - Except for some challenge exercises, you will always be given the equivalent C code.
-    - It might be better to translate the C code into MIPS like C code.
+    - It might help to translate the C code into MIPS like C code.
 - Include the equivalent C code in comments.
 - On top of every function, include a comment with:
     - Frame: registers stored on the stack.
