@@ -35,8 +35,8 @@ int main2(void) {
     scanf("%d", &x);
 
     if (x <= 46340) goto square;
-        printf("square too big for 32 bits\n");
-        goto end;
+    printf("square too big for 32 bits\n");
+    goto end;
     square:
         y = x * x;
         printf("%d\n", y);

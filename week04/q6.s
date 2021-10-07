@@ -2,19 +2,24 @@
 # x in register $t0
 
 main:
-# x = 24
+    li $t0, 24      # x = 24
 
 loop:
-# if (x >= 42) goto end;
-    
-# printf("%d", x);
+# if (x > 42) goto end;
+    bgt $t0 42 end
 
-# printf("%c", '\n'); '\n' == 10
+    li $v0, 1
+    move $a0, $t0    # $a0 = $t0
+    syscall
     
+                    # printf("%c", '\n'); '\n' == 10
+    li $v0, 11
+    li $a0, 10      # li $a0 '\n'
+    syscall
+
 # x += 3
-    
-# goto loop
-    j loop
+    addi $t0 $t0 3       # x = x + 3
+    j loop              # goto loop
 
 end:
 # return 0; - not quite the same
