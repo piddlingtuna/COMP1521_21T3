@@ -28,3 +28,4 @@ There will be a correctness penalty for assignments that do not follow these imp
 
 Memes are hard to find for this topic.
 
+![arrays](arrays.jpg)
