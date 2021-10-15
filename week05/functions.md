@@ -19,8 +19,12 @@ something__prologue:
         sw      $s0, 0($sp)
         addiu   $sp, $sp, -4
         sw      $s1, 0($sp)
+        addiu   $sp, $sp, -4
+        sw      $s2, 0($sp)
 
 something__epilogue:
+        lw      $s2, 0($sp)
+        addiu   $sp, $sp, 4
         lw      $s1, 0($sp)
         addiu   $sp, $sp, 4
         lw      $s0, 0($sp)
