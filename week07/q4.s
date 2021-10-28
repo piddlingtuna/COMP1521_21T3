@@ -3,17 +3,18 @@
 
 main:
         
+main__prologue:
         addi $sp, $sp, -4       # move stack pointer down to make room
         sw   $ra, 0($sp)        # save $ra on $stack
 
-main__prologue:
-        li   $a0, 11            # sum4(11, 13, 17, 19)
-        li   $a1, 13
-        li   $a2, 17
-        li   $a3, 19
-        jal  sum4
-
 main__body:
+        
+        li $a0, 11
+        li $a1, 13
+        li $a2, 17
+        li $a3, 19
+        jal sum4
+        
         move $a0, $v0           # printf("%d", z);
         li   $v0, 1
         syscall
@@ -31,8 +32,64 @@ main__epilogue:
 
 
 sum4:
-        # TODO
+        # Arguments:
+        #   $a0: int a
+        #   $a1: int b
+        #   $a2: int c
+        #   $a3: int d
+        # Returns: int in $v0
+        #
+        # Frame:    $ra, $s0, $s1, $s2
+        # Uses:     $ra, $s0, $s1, $s2, $a0, $a1, $v0
+        # Clobbers: $a0, $a1, $v0
 
+sum4__prologue:
+        addi $sp, $sp, -16
+        sw   $ra, 0($sp)
+        sw   $s0, 4($sp)
+        sw   $s1, 8($sp)
+        sw   $s2, 12($sp)
+        
+sum__body:
+        move $s0, $a2           # s0 == c
+        move $s1, $a3           # s1 == d
+        jal sum2
+        move $s2, $v0           # s0 = sum2(a, b)
+        
+        move $a0, $s0
+        move $a1, $s1
+        jal sum2
+                                # v0 == sum(c, d)
+        
+        add $v0, $v0, $s0       # v0 = v0 + s0
+                                # v0 = sum2(a, b) + sum(c, d)
+
+sum4__epilogue:
+        lw   $ra, 0($sp)
+        lw   $s0, 4($sp)
+        lw   $s1, 8($sp)
+        lw   $s2, 12($sp)
+        addi $sp, $sp, 16
+        
+        jr $ra
 
 sum2:                           # sum2 doesn't call other functions
-        # TODO
+        # Arguments:
+        #   $a0: int x
+        #   $a1: int y
+        # Returns: int in $v0
+        #
+        # Frame:    $ra
+        # Uses:     $ra, $v0, $a0, $a1, $a2
+        # Clobbers: $v0, $a2
+
+sum2_prologue:
+        # nothing?
+
+sum2__body:
+        add $v0, $a0, $a1       # v0 = x + y;
+        li $a2 324235
+        
+sum2_epilogue:
+
+        jr $ra

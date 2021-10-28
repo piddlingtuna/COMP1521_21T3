@@ -1,7 +1,7 @@
 # Recursive maximum of array function.
 
 # Register usage:
-#   - `a' is in $a0
+#   - `array' is in $a0
 #   - `length' is in $a1
 #   - `first_element' is in $s0
 #   - `max_so_far' is in $t0
@@ -15,13 +15,34 @@ max__prologue:
         sw   $s0 0($sp)         # save $s0
 
 max__body:
-        # TODO
+        # int first_element = a[0];
+        lw $s0, ($a0)
+        beq $a1, 1, max__base
+        b max__recursive
+        
+max__base:
+        move $v0, $s0           # return value in $v0
+        b max__epilogue
+
+max__recursive:
+        addi $a0, $a0, 4        # &array[1]
+        addi $a1, $a1, -1       # length - 1
+        jal max                 # max(&a[1], length - 1)
+        move $t0, $v0           # max_so_far = max(..., ...)
+        bgt $s0, $t0, max__if
+        b max__else
+max__if:
+        move $v0, $s0           # $v0 = first_element
+
+max__else:
+                                # $v0 = max_so_far
 
 max__epilogue:
         lw   $s0 0($sp)         # restore $s0
         lw   $ra 4($sp)         # restore $ra
         addi $sp $sp 8          # restore sp
 
+        jr $ra
 
 # Some test code which calls max
 main:
