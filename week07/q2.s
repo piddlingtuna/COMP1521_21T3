@@ -2,7 +2,15 @@
 
 # Assume that we are placing the variables in memory, at an appropriately aligned address, and with a label which is the same as the C variable name.
 
-.data
+        .data
+#int v0;
+v0:
+
+#int v1 = 42;
+v1:
+
+#char v2;
+v2:
 
 # char v3 = 'a';
 v3:
