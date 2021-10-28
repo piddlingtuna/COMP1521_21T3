@@ -5,8 +5,8 @@ main:
     li $t0, 24      # x = 24
 
 loop:
-# if (x > 42) goto end;
-    bgt $t0 42 end
+# if (x >= 42) goto end;
+    bge $t0 42 end
 
     li $v0, 1
     move $a0, $t0    # $a0 = $t0
