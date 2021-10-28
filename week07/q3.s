@@ -1,13 +1,21 @@
 # Recursive maximum of array function.
 
-# Register usage:
-#   - `a' is in $a0
-#   - `length' is in $a1
-#   - `first_element' is in $s0
-#   - `max_so_far' is in $t0
-
         .text
 max:
+        # Args:
+        #   - $a0: TODO
+        # Returns:
+        #   - $v0: TODO
+        #
+        # Frame:        $ra, [...]
+        # Uses:         [...]
+        # Clobbers:     [...]
+        #
+        # Locals:
+        #   - `array` is in $a0
+        #   - `length' is in $a1
+        #   - `first_element' is in $s0
+        #   - `max_so_far' is in $t0
 
 max__prologue:
         addi $sp $sp -8         # create stack frame

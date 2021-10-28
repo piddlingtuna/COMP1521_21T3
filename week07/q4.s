@@ -1,6 +1,7 @@
 # Sum 4 numbers using function calls.
 # Note the use of the stack to save $ra in main.
 
+        .text
 main:
         # Args:
         #   - $a0: TODO
@@ -12,12 +13,11 @@ main:
         # Clobbers:     [...]
 
 main__prologue:
-        
         addi $sp, $sp, -4       # move stack pointer down to make room
         sw   $ra, 0($sp)        # save $ra on $stack
 
 main__body:
-        li   $a0, 11            # sum4(11, 13, 17, 19)
+        # sum4(11, 13, 17, 19)
 
         move $a0, $v0           # printf("%d", z);
         li   $v0, 1
@@ -51,8 +51,25 @@ sum4__prologue:
 sum4__body:
         # TODO
 
-sum4_
+sum4_epilogue:
+        #TODO
 
 
 sum2:                           # sum2 doesn't call other functions
+        # Args:
+        #   - $a0: TODO
+        # Returns:
+        #   - $v0: TODO
+        #
+        # Frame:        $ra, [...]
+        # Uses:         [...]
+        # Clobbers:     [...]
+
+sum2__prologue:
         # TODO
+
+sum2__body:
+        # TODO
+
+sum2_epilogue:
+        #TODO
