@@ -18,15 +18,25 @@ Make sure you included every `$s` register used (and don't include any `$a` regi
 
 It will a bit like:
 ```
+
 prologue:
-    addi $sp, $sp, -8
+    addi $sp, $sp, -12
     sw   $ra, 0($sp)
     sw   $s0, 4($sp)
+    sw   $s1, 8($sp)
+
+body:
+    move $s0, $a0       # s0 = a0
+    move $s1, $a1       # s1 = a1
+    
+    move $a0, $s0       # a0 = s0
+    jal clear_surroundings
 
 epilogue:
-    sw   $s0, 4($sp)
-    sw   $ra, 0($sp)
-    addi $sp, $sp, 8
+    lw   $s1, 8($sp)
+    lw   $s0, 4($sp)
+    lw   $ra, 0($sp)
+    addi $sp, $sp, 12
 ```
 
 > Did you use `$t` and `$s` registers correctly?

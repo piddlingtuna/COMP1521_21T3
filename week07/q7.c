@@ -7,9 +7,9 @@ struct _coord {
     double x;
     double y;
 };
-// sizeof (struct _coord) == TODO bytes
-// offset of _coord.x == TODO bytes
-// offset of _coord.y == TODO bytes
+// sizeof (struct _coord) == 16 bytes
+// offset of _coord.x == 0 bytes
+// offset of _coord.y == 8 bytes
 
 // b
 struct _node {
@@ -17,26 +17,25 @@ struct _node {
     struct _node *next; // sizeof (pointer is 8 bytes)
 };
 
-// sizeof (struct _node) == TODO bytes
-// offset of _coord.value == TODO bytes
-// offset of _coord.next == TODO bytes
+// sizeof (struct _node) == 12 bytes
+// offset of _node.value == 0 bytes
+// offset of _node.next == 4 bytes
 
 // c
 struct _enrolment {
+    double mark;        // e.g. 87.3
     int stu_id;         // e.g. 5012345
     char course[9];     // e.g. "COMP1521"
     char term[5];       // e.g. "17s2"
     char grade[3];      // e.g. "HD"
-    double mark;        // e.g. 87.3
 };
 
-// sizeof (struct _enrolment) == TODO bytes
-// offset of _enrolment.std_id == TODO bytes
-// offset of _enrolment.course == TODO bytes
-// offset of _enrolment.term == TODO bytes
-// offset of _enrolment.grade == TODO bytes
-// offset of _enrolment.mark == TODO bytes
-// sizeof of _enrolment.mark == TODO bytes
+// sizeof (struct _enrolment) == 32 bytes
+// offset of _enrolment.std_id == 0 bytes
+// offset of _enrolment.course == 4 bytes
+// offset of _enrolment.term == 13 bytes
+// offset of _enrolment.grade == 18 bytes
+// offset of _enrolment.mark == 24 bytes
 
 // PADDING
 // Memory must be stored at an address divisible by its size.
