@@ -1,4 +1,4 @@
-// sum 4 numbers using function calls
+// Sum 4 numbers using function calls
 
 #include <stdio.h>
 

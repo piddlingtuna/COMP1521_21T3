@@ -17,9 +17,9 @@ struct _node {
     struct _node *next; // sizeof (pointer is 8 bytes)
 };
 
-// sizeof (struct _node) == TODO bytes
-// offset of _coord.value == TODO bytes
-// offset of _coord.next == TODO bytes
+// sizeof (struct _node) == 12 bytes
+// offset of _node.value == 0 bytes
+// offset of _node.next == 4 bytes
 
 // c
 struct _enrolment {

@@ -1,18 +1,25 @@
 # Recursive maximum of array function.
 
-# Register usage:
-#   - `array' is in $a0
-#   - `length' is in $a1
-#   - `first_element' is in $s0
-#   - `max_so_far' is in $t0
-
         .text
 max:
+        # Args:
+        #   - $a0: int[], `array`
+        #   - $a1: int, `length`
+        # Returns:
+        #   - $v0: int
+        #
+        # Frame:        $ra, $s0
+        # Uses:         $ra, $s0, $t0, $a0, $a1, $v0
+        # Clobbers:     $t0, $a0, $a1, $v0
+        #
+        # Locals:
+        #   - `first_element' is in $s0
+        #   - `max_so_far' is in $t0
 
 max__prologue:
-        addi $sp $sp -8         # create stack frame
-        sw   $ra 4($sp)         # save return address
-        sw   $s0 0($sp)         # save $s0
+        addi    $sp $sp -8         # create stack frame
+        sw      $ra 4($sp)         # save return address
+        sw      $s0 0($sp)         # save $s0
 
 max__body:
         # int first_element = a[0];
@@ -41,6 +48,8 @@ max__epilogue:
         lw   $s0 0($sp)         # restore $s0
         lw   $ra 4($sp)         # restore $ra
         addi $sp $sp 8          # restore sp
+        
+        jr $ra
 
         jr $ra
 
@@ -74,4 +83,4 @@ main__epilogue:
 
         .data
 array:
-        .word 1 2 3 4 5 6 4 3 2 1
+        .word 1, 2, 3, 4, 5, 6, 4, 3, 2, 1

@@ -2,7 +2,15 @@
 
 # Assume that we are placing the variables in memory, at an appropriately aligned address, and with a label which is the same as the C variable name.
 
-.data
+        .data
+#int v0;
+v0:
+       .space 4 
+#int v1 = 42;
+v1:
+        .word 42
+#char v2;
+v2:
 
 # char v3 = 'a';
 v3:
@@ -15,7 +23,7 @@ v4:
 
 # int v5[20];
 v5:
-
+        .space 80               # sizeof(int) * len(array) == 4 * 20
 # int v6[10][5];
 v6:
     .space 4 * 10 * 5 # sizeof(int) * size of array
