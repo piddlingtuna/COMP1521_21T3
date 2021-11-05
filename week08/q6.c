@@ -13,8 +13,30 @@ int main(int argc, char *argv[]) {
         fprintf(stderr,  "Usage: %s <filename>\n", argv[0]);
         return 1;
     }
-
-    // TODO
+    
+    // stdin
+    // stderr vs stdout
+    
+    FILE *stream = fopen(argv[1], "r");
+    if (stream == NULL) {
+        // couldn't open the file, print an error message
+        // to standard error
+        perror(argv[1]);
+        return 1;
+    }
+    fprintf(stream, "Hello world\n");
+    
+    // putchar vs fputc
+    // read characters until I reach '\n' or an EOF
+    int input = fgetc(stream);
+    while (input != '\n' && input != EOF) {
+        // putchar(input);
+        fputc(input, stdout); // fprintf(stream, "%c", input)
+        input = fgetc(stream);
+    }
+    fputc('\n', stdout);
+    
+    fclose(stream);
 
     return 0;
 }

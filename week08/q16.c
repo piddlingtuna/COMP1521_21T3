@@ -15,9 +15,9 @@ int main(void) {
     int ns = 0;             // # spaces
     char buf[BUFFER_SIZE];  // input buffer
     
-    fd = open ("xyz", O_RDONLY);
+    fd = open ("xyz", O_RDONLY); // 2500 bytes
     assert (fd >= 0);
-    while ((nb = read (fd, buf, BUFFER_SIZE)) > 0) {
+    while ((nb = read (fd, buf, BUFFER_SIZE)) > 0) { // 1000 bytes
         for (int i = 0; i < nb; i++) {
             if (isspace (buf[i])) {
                 ns++;
@@ -25,6 +25,11 @@ int main(void) {
         }
     }
     close (fd);
+    // 1st call: returns: 1000, offset: 1000
+    // 2nd call: returns: 1000, offset: 2000
+    // 3rd call: returns: 500, offset: 2500
+    // 4th call: returns: 0, offset: 2500
+    
     
     return 0;
 }
