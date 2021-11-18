@@ -1,5 +1,8 @@
 # Tutorial 10
 
+![bill_gates](bill_gates.jpeg)
+
+
 ## Assignment 2
 
 How is the assignment going?
@@ -8,7 +11,6 @@ https://cgi.cse.unsw.edu.au/~cs1521/21T3/assignments/ass2/index.html
 
 
 ## Virtual Memory
-
 
 ### Why use virtual memory?
 
@@ -36,7 +38,7 @@ q5) Each new process in a computer system will have a new address space. Which p
 ![address_space](address_space.png)
 
 
-## What is virtual memory?
+### What is virtual memory?
 
 Physical memory is split into equal sized frames.
 
@@ -57,18 +59,18 @@ Could work with varying sized pages/frames but a lot harder and slower.
 Could work with non power of 2 sizes but slower - power of 2 lets you use bitwise operators.
 
 16 / 2 == 16 >> 1
-010000 / 2 == 001000
+0b010000 / 2 == 0b001000
 
 **What is the difference between a virtual address and a physical address?**
 
 
-## Translation
+### Translation
 
 #define PAGE_SIZE 4096
 
 page_table is an array
 - index is your virtual memory page number.
-- get back is your physical frame number
+- value is your physical frame number.
 
 page_number = virtual_address / PAGE_SIZE; (integer division)
 offset = virtual_address % PAGE_SIZE;
@@ -76,32 +78,33 @@ physical_address = PAGE_SIZE * page_table[page_number] + offset;
 
 | Virtual Page | Physical Frame|
 |--------------|---------------|
-| 0            | 11            |
-| 1            | NA            |
-| 2            | 5             |
-| 3            | 2             |
+| 0            | 0             |
+| 1            | 0             |
+| 2            | 0             |
+| 3            | 0             |
 
-Given a virtual address of 10000, what is the physical address?
+**Given a virtual address of 10000, what is the physical address?**
 
-page_number = 10000 / 4096 == 1
-offset = 5096 % 4096 == 10000
-physical_address = 4096 * page_table[page_number] + 10000;
-
-
-Given a virtual address of 5096, what is the physical address?
-
-page_number = 5096 / 4096 == 2
-offset = 5096 % 4096 == 1808
-physical_address = 4096 * 5 + 1808 == 22288;
+page_number = TODO
+offset = TODO
+physical_address = TODO
 
 
-Virtual page is not in memory:
-- isn't enough physical memory
-- hasn't been used yet (lazy loading)
+**Given a virtual address of 5096, what is the physical address?**
+
+page_number = TODO
+offset = TODO
+physical_address = TODO
+
+
+If a virtual page is not in physical memory:
+- there isn't enough physical memory.
+- it hasn't been used yet (lazy loading).
 
 This causes a page fault. The page is loaded from the hard drive into RAM.
 
-## Least Recently Used
+
+### Least Recently Used
 
 Virtual memory let's you have more virtual memory (pages) than actual physical memory (frame).
 
@@ -166,14 +169,14 @@ SDD is 10 000x slower than RAM.
 
 What will happen if these virtual memory pages were accessed? 
 
-1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+0 1 2 3 4 0 1 2 3 4 0 1 2 3 4
 
 | Frame | Page | Last Used |
 |-------|------|-----------|
+| 0     | 0    | 0         |
 | 1     | 0    | 0         |
 | 2     | 0    | 0         |
 | 3     | 0    | 0         |
-| 4     | 0    | 0         |
 
 working set == RAM we are currently using
 
@@ -184,6 +187,8 @@ We are loading pages into RAM and out of RAM very frequently.
 This is called thrashing.
 
 Your computer will be extremely slow...
+
+![virtual_memory_problem](virtual_memory_problem.png)
 
 
 ## Any questions?
