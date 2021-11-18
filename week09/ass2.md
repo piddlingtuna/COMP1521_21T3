@@ -5,6 +5,47 @@ https://cgi.cse.unsw.edu.au/~cs1521/21T3/assignments/ass2/index.html
 ## Initial code
 
 ## How is the assignment going?
+0 123 456 789
+- rw- rw- r--
+- rwx rwx rwx
+
+file type, owner, group, everyone else
+- == regular file
+d == directory
+
+5
+'h', 'e', 'l', 'l', 'o', '\0'
+
+3000
+
+fscanf(stream, "%d");
+
+int first  = fgetc(stream); // 0b1010 0001
+int second = fgetc(stream); // 0b1111 1000
+
+second       0b0000 0000 1111 1000
+first        0b0000 0000 1010 0001
+second << 8  0b1111 1000 0000 0000
+int length = 0b1111 1000 1010 0001
+
+# content length
+
+1st -> 6th
+2nd -> 5th
+
+uint64_t byte = fgetc(stream);
+byte = byte << 40;
+
+content_length = 13;
+
+int fseek(stream, content_length + 1, SEEK_CUR);
+
+FILE* file = fopen(pathname, "");
+
+int byte = fgetc(file);
+
+fclose(file);
+
 
 ## Format
 

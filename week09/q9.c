@@ -46,7 +46,42 @@ void process_file(char *c_file) {
 
 // compile a C file
 void compile(char *c_file, char *binary) {
-    // TODO
+    pid_t pid;
+    extern char **environ;
+    char *argv[] = {C_COMPILER, c_file, "-o", binary, NULL};
+    
+    // print compile command
+    for (char **p = argv; *p; p++) {
+        printf("%s ", *p);
+    }
+    printf("\n");
+    
+    if (posix_spawn(&pid, C_COMPILER, NULL, NULL, argv, environ) == -1) {
+        perror(c_file);
+        exit(1);
+    }
+    
+    int exit_status;
+    if (waitpid(pid, &exit_status, 0) == -1) {
+        perror(c_file);
+        exit(1);
+    }
+    
+    pid_t f = fork();
+    if (f == 0) {
+        // in the child
+        execv(C_COMPILER, char *const *__argv);
+    } else {
+        // in the parent
+    }
+    // here
+    
+    if (exit_status != 0) {
+        // something went wrong
+        fprintf(stderr, "compile failed\n");
+    }
+    
+    // error checking
 }
 
 // give a string ending in .c

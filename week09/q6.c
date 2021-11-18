@@ -44,5 +44,49 @@ int main(int argc, char *argv[]) {
 // chmod a file if publically-writeable
 
 void chmod_if_needed(char *pathname) {
-    // TODO
+    struct stat file_info;
+    // stat system call
+    if (stat(pathname, &file_info) == -1) {
+        // error
+        perror(pathname);
+        exit(1);
+    }
+    
+    mode_t permissions = file_info.st_mode;
+    
+    // S_IWOTH     = 000 000 010
+    // permissions = 110 110 110
+    // &           = 000 000 010
+    
+    if (permissions & S_IWOTH) {
+        // publicly writeable
+        printf("removing public write from %s\n", pathname);
+        
+        // S_IWOTH     = 000 000 010
+        // ~S_IWOTH    = 111 111 101
+        // S_IWOTH     = 000 000 010
+        // permissions = 110 110 110
+        // permissions = 110 110 100
+        
+        mode_t edited_permissions = permissions & ~S_IWOTH;
+        edited_permissions = permissions ^ S_IWOTH;
+        
+        if(chmod(pathname, edited_permissions) == -1) {
+            perror(pathname);
+            exit(1);
+        }
+
+    } else {
+        printf("%s is not publically writable\n", pathname);
+    }
+    
+    // mode_t edited_permissions = permissions ^ S_IWOTH;
+    // chmod(pathname, edited_permissions);
+    
+    // check if the file is publicly writeable
+    
+    
+    // chmod
+    // change mode
+    // cd - change directory
 }
