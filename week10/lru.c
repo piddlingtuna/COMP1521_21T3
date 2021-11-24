@@ -13,6 +13,9 @@ typedef struct ipt_entry {
     int last_access_time;
 } ipt_entry_t;
 
+ipt[2] // physical frame is 2
+ipt[2].virtual_page;
+
 
 void lru(int n_physical_pages, int n_virtual_pages);
 void access_page(int virtual_page, int access_time, int n_physical_pages, struct ipt_entry *ipt);
@@ -57,9 +60,14 @@ void access_page(int virtual_page, int access_time, int n_physical_pages, struct
     // PUT YOUR CODE HERE TO HANDLE THE 3 cases
     //
     // 1) The virtual page is already in a physical page
+    
+        ipt[i].virtual_page == virtual_page
+        // update access_time
     //
     // 2) The virtual page is not in a physical page,
     //    and there is free physical page
+    
+        ipt[i].virtual_page == -1;
     //
     // 3) The virtual page is not in a physical page,
     //    and there is no free physical page

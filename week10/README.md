@@ -78,23 +78,23 @@ physical_address = PAGE_SIZE * page_table[page_number] + offset;
 
 | Virtual Page | Physical Frame|
 |--------------|---------------|
-| 0            | 0             |
-| 1            | 0             |
+| 0            | 3             |
+| 1            | 2             |
 | 2            | 0             |
-| 3            | 0             |
+| 3            | 1             |
 
 **Given a virtual address of 10000, what is the physical address?**
 
-page_number = TODO
-offset = TODO
-physical_address = TODO
+page_number = 10000 / 4096 = 2;
+offset = 10000 % 4096 = 1808;
+physical_address = 4096 * 0 + 1808 = 1808;
 
 
 **Given a virtual address of 5096, what is the physical address?**
 
-page_number = TODO
-offset = TODO
-physical_address = TODO
+page_number = 5096 / 4096 = 1;
+offset = 5096 % 4096 = 1000;
+physical_address = 4096 * 2 + 1000 = 9192;
 
 
 If a virtual page is not in physical memory:
@@ -173,10 +173,10 @@ What will happen if these virtual memory pages were accessed?
 
 | Frame | Page | Last Used |
 |-------|------|-----------|
-| 0     | 0    | 0         |
-| 1     | 0    | 0         |
-| 2     | 0    | 0         |
-| 3     | 0    | 0         |
+| 0     | 4    | 4         |
+| 1     | 0    | 5         |
+| 2     | 1    | 6         |
+| 3     | 2    | 2         |
 
 working set == RAM we are currently using
 
